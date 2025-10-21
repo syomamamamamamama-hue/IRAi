@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<base href="./">
+<title>AORN PLATFORM | 成果主義のWebマーケティング</title>
+<meta name="description" content="広告費を投資に変える、成果主義のWebマーケティング。AORN PLATFORMは戦略〜実行まで一気通貫で支援します。">
+<style>
+  :root{
+    --green:#18b17f;
+    --green-2:#acadad;
+    --ink:#142024;
+    --muted:#5c6d73;
+    --bg:#f8fcfa;
+  }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;line-height:2.0;font-size:1.2em;}
+  img{max-width:100%;display:block;height:auto;}
+  .wrap{width:min(1100px,92%);margin:auto;}
+  .section{padding:72px 0;}
+  .hero{position:relative;min-height:46vh;display:flex;align-items:center;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;background:url('assets/hero-bg.png') center/cover no-repeat;filter:brightness(0.80);} 
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(255,255,255,0.6), rgba(255,255,255,0.6));}
+  .hero-inner{position:relative;z-index:2;max-width:900px;}
+  .hero h1{font-size:clamp(38px,5vw,56px);margin:0 0 20px;background:var(--green);color:#fff;display:inline-block;padding:10px 20px;border-radius:10px;line-height:1.5;text-align:left;}
+  .hero p{font-size:clamp(20px,2.6vw,26px);color:var(--muted);margin:0 0 22px;text-align:left;}
+  .btn{display:inline-flex;align-items:center;gap:.6em;padding:16px 26px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,.06);} 
+  .btn-primary{background:#0da976;color:#fff;}
+  #troubles{position:relative; isolation:isolate;}
+#troubles::before{content:"";position:absolute;inset:0;z-index:0;background:url('assets/troubles-bg.png') center/cover no-repeat, linear-gradient(10deg,#eaf7f1,#eaf7f1);opacity: 100;}
+#troubles::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg, rgba(253, 255, 255, 0.6), rgba(255,255,255,.65));}
+#troubles .wrap{position:relative;z-index:2;}
+  #troubles h2{font-size:clamp(52px,7vw,72px);margin-bottom:24px;white-space:nowrap;}
+  #troubles h2 span{color:var(--green);border-bottom:3px solid var(--green-2);padding-bottom:0;}
+  .trouble-list{list-style:none;padding:0;margin:20px 0;max-width:900px;}
+  .trouble-list li{font-size:clamp(26px,3.6vw,34px);margin-bottom:22px;display:flex;align-items:center;border-bottom:3px solid var(--green-2);padding-bottom:10px;}
+  .trouble-list .check{width:34px;height:34px;vertical-align:middle;margin-right:14px;transform:translateY(-2px);}
+  .solve-top{position:relative;background:url('assets/solve-bg.png') center/cover no-repeat;}
+  .solve-top::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.88);} 
+  .solve-top .wrap{position:relative;z-index:1;}
+  .solve-top h2{font-size:clamp(54px,7vw,80px);color:var(--green);margin-bottom:12px;text-align:center;}
+  .solve-top p{text-align:center;font-size:clamp(22px,3vw,30px);color:var(--muted);} 
+  .strengths{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:34px;}
+  .card{background:#fff;border-radius:14px;padding:32px;box-shadow:0 10px 26px rgba(0,0,0,.06);}
+  .card h3{font-size:clamp(32px,4.5vw,42px);margin-bottom:10px;color:var(--green);border-bottom:3px solid var(--green-2);display:inline-flex;align-items:center;gap:10px;padding-bottom:6px;}
+  .card h3 img{width:28px;height:28px;}
+  .card p{font-size:clamp(20px,2.8vw,26px);color:var(--muted);}
+  .business{background:var(--green-2);}
+  .biz-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .biz-grid li{border-bottom:1px dashed rgba(0,0,0,.08);padding:10px 2px;}
+  .about{background:#fff;}
+  .about-grid{display:grid;gap:26px;align-items:start;}
+  @media(min-width:900px){.about-grid{grid-template-columns:1.1fr .9fr;}}
+  .mapbox{border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden;background:#f8f8f8;}
+  .mapbox img{width:100%;display:block;}
+  .cta{background:var(--green-2);text-align:center;padding:64px 0;} 
+  .cta h2{font-size:clamp(46px,6vw,64px);margin:0 0 12px;} 
+  .cta p{font-size:clamp(22px,3vw,28px);color:var(--muted);margin-bottom:20px;} 
+  .cta .btn-primary{font-size:clamp(22px,3.4vw,28px);} 
+  footer{padding:30px 0;color:var(--muted);font-size:18px;text-align:center;}
+  .business {
+  position: relative;
+  background: url('./assets/business-bg.png') center/cover no-repeat;
+}
+
+.business::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6); /* 白いレイヤーを少しかけて文字を読みやすくする */
+}
+
+.business .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+</style>
+
+<style>
+/* ====== Responsive Header / Nav ====== */
+.site-header{position:sticky;top:0;background:#ffffffcc;backdrop-filter:saturate(180%) blur(10px);z-index:100;border-bottom:1px solid rgba(0,0,0,.06);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:60px;}
+.brand{font-weight:800;text-decoration:none;color:#142024;font-size:18px;}
+.site-nav{display:flex;gap:24px;}
+.site-nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;}
+.site-nav a{color:#142024;text-decoration:none;font-weight:600;}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:transparent;border:0;padding:8px;margin-left:auto;}
+.nav-toggle .bar{width:24px;height:2px;background:#142024;display:block;}
+
+@media(max-width:900px){
+  .nav-toggle{display:flex;}
+  .site-nav{position:absolute;left:0;right:0;top:60px;background:#fff;border-bottom:1px solid rgba(0,0,0,.06);display:none;}
+  .site-nav.open{display:block;}
+  .site-nav ul{flex-direction:column;}
+  .site-nav a{padding:14px 20px;display:block;}
+}
+
+/* ====== Small-screen spacing & font sizing ====== */
+.wrap{width:90%;max-width:1100px;margin:auto;}
+.section{padding:60px 0;}
+@media(max-width:600px){.section{padding:40px 0;}}
+
+/* hero adjustments to avoid fixed height issues */
+.hero{min-height:auto;padding:70px 0;}
+.hero::after{background:linear-gradient(0deg, rgba(255,255,255,0.75), rgba(255,255,255,0.75));}
+.hero h1{font-size:clamp(28px,6vw,52px);}
+.hero p{font-size:clamp(16px,4vw,22px);}
+
+/* grid adjustments */
+.strengths{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.card h3{font-size:clamp(22px,4vw,32px);}
+.card p{font-size:clamp(16px,3.5vw,20px);}
+
+/* lists & headings */
+#troubles h2{font-size:clamp(30px,6vw,56px);}
+.trouble-list li{font-size:clamp(18px,4vw,26px);padding-bottom:8px;border-bottom:2px solid var(--green-2);}
+
+/* CTA */
+.cta{text-align:center;}
+.cta h2{font-size:clamp(26px,6vw,48px);}
+.cta p{font-size:clamp(16px,4vw,22px);}
+.btn{transition:background .3s ease;}
+.btn-primary:hover{filter:brightness(0.95);}
+@media(max-width:600px){.btn{width:100%;}}
+
+/* Footer */
+footer{font-size:14px;}
+</style>
+
+
+<style>
+  /* === HOTFIX: 左寄りに見えるズレ対策 === */
+  :root{
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+  }
+  body{
+    padding-left: max(0px, var(--safe-left));
+    padding-right: max(0px, var(--safe-right));
+  }
+  @media(max-width:900px){
+    .hero .wrap, .hero-inner{ text-align:center; }
+    .hero h1{ margin-left:auto; margin-right:auto; display:inline-block; }
+    .hero p{ margin-left:auto; margin-right:auto; }
+  }
+</style>
+
+
+<style>
+/* ===== Controllable line breaks & line locking ===== */
+.lock-lines .line{display:block;}
+/* device-specific <br> */
+.br--pc,.br--sp,.br--all{display:none;}
+@media(min-width:901px){ .br--pc{display:block;} }
+@media(max-width:900px){ .br--sp{display:block;} }
+.br--all{display:block;}
+/* avoid awkward CJK breaks where not intended */
+.lock-lines{ line-break: strict; -webkit-line-break: strict; }
+.nowrap{ white-space:nowrap; }
+.balance{ text-wrap: balance; }
+.pretty{ text-wrap: pretty; }
+/* keep headings readable across sizes without reflowing lines */
+h1.lock-lines .line{ font-size: inherit; }
+h2.lock-lines .line{ font-size: inherit; }
+</style>
+
+
+<style>
+/* Stabilize line length of key headings to keep same breaks */
+.hero-inner h1.lock-lines{ max-width: 22ch; }
+.solve-top h2.lock-lines{ max-width: 18ch; margin-inline:auto; text-align:center; }
+#troubles h2{ text-wrap: balance; }
+</style>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="#" class="brand" aria-label="AORN PLATFORM Home">AORN PLATFORM</a>
+      <button class="nav-toggle" aria-label="ナビゲーションの切替" aria-expanded="false" aria-controls="site-nav">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" role="navigation">
+        <ul>
+          <li><a href="#troubles">お悩み</a></li>
+          <li><a href="#business">事業内容</a></li>
+          <li><a href="#about">会社情報</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1 class="lock-lines"><span class="line">広告費を投資に変える</span><span class="line">成果主義のWebマーケティング</span></h1>
+      <p>顧客ビジネスの成長のために、デジタルマーケティングの探求と創造を繰り返し、まだ見ぬ未来へと導くプロフェッショナル集団。</p>
+      <a class="btn btn-primary" href="mailto:aorn.ccinfo2024@gmail.com">✉ まずはメールで相談する</a>
+    </div>
+  </section>
+  <section id="troubles" class="section">
+    <div class="wrap">
+      <h2>こんな<span>お悩み</span>ありませんか？</h2>
+      <ul class="trouble-list">
+        <li><img decoding="async" loading="lazy" src="./assets/icon-check.png" alt="check" class="check">もっと売り上げを増やしたい</li>
+        <li class="nowrap"><img decoding="async" loading="lazy" src="./assets/icon-check.png" alt="check" class="check">運用中の広告代理店に不満があり、切り替えたい</li>
+        <li><img decoding="async" loading="lazy" src="./assets/icon-check.png" alt="check" class="check">サイト改善や分析もお願いしたい</li>
+        <li><img decoding="async" loading="lazy" src="./assets/icon-check.png" alt="check" class="check">広告運用に時間が割けない</li>
+      </ul>
+    </div>
+  </section>
+  <section class="solve-top section">
+    <div class="wrap">
+      <h2 class="lock-lines"><span class="line">AORN PLATFORMなら</span><span class="line">解決できます</span></h2>
+      <p>戦略から実行まで、一貫してサポートし、成果を最大化します。</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="strengths">
+        <div class="card">
+          <h3><img decoding="async" loading="lazy" src="./assets/percent-icon.png" alt="">週1回のレポート報告</h3>
+          <p>運用状況を見える化し、数値に基づいた改善提案を行います。</p>
+        </div>
+        <div class="card">
+          <h3><img decoding="async" loading="lazy" src="./assets/perent-icon.png" alt="">月間50社超の運用スキル</h3>
+          <p>多業種での豊富な経験により、的確な施策を提供します。</p>
+        </div>
+        <div class="card">
+          <h3><img decoding="async" loading="lazy" src="./assets/prcent-icon.png" alt="">手数料10％で高品質運用</h3>
+          <p>業務効率化で低コストを実現しながらも、丁寧な最適化を実施。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="business" class="business section">
+    <div class="wrap">
+      <h2>事業内容（Webパートナー事業）</h2>
+      <ul class="biz-grid">
+        <li>Webマーケティング各種コンサルティング</li>
+        <li>リスティング広告の出稿支援</li>
+        <li>各種アドネットワークの出稿支援</li>
+        <li>コンテンツマーケティングの各種コンサルティング</li>
+        <li>Facebook／ツイッター等のソーシャルメディアマーケティング支援</li>
+        <li>戦略的サイト制作、ECサイト構築支援</li>
+        <li>アクセス解析、導線改善コンサルティング</li>
+      </ul>
+    </div>
+  </section>
+  <section id="about" class="about section">
+    <div class="wrap about-grid">
+      <div>
+        <h2>About Us</h2>
+        <p>会社名：株式会社AORN PLATFORM<br>〒160-0022 東京都新宿区新宿4-4-7 セブンビル303<br>代表番号：03-4400-6581<br>代表取締役：井原 譲一<br>メール：aorn.ccinfo2024@gmail.com</p>
+      </div>
+      <div class="mapbox">
+        <img decoding="async" loading="lazy" src="./assets/map.png" alt="Googleマップ（PNG差し替え）">
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="cta">
+    <div class="wrap">
+      <h2>お問い合わせ</h2>
+      <p>ご質問・ご相談はメールにて承ります。内容確認後、通常3営業日以内にご返信いたします。</p>
+      <a class="btn btn-primary" href="mailto:aorn.ccinfo2024@gmail.com">✉ aorn.ccinfo2024@gmail.com</a>
+    </div>
+  </section>
+  <footer>株式会社AORN PLATFORM｜〒160-0022 東京都新宿区新宿4-4-7 セブンビル303｜TEL 03-4400-6581</footer>
+
+<script>
+  (function(){
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        const open = nav.classList.toggle('open');
+        this.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click', ()=> {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
